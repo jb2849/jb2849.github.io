@@ -1,17 +1,14 @@
----
-title: "Personal Profile: Junchi Bin"
-output: 
-  flexdashboard::flex_dashboard:
-    storyboard: true
-    # social: menu
-    # source: embed
- # runtime: shiny
-runtime: shiny
----
+#
+# This is a Shiny web application. You can run the application by clicking
+# the 'Run App' button above.
+#
+# Find out more about building applications with Shiny here:
+#
+#    http://shiny.rstudio.com/
+#
 
-```{r setup, include=FALSE}
-library(htmltools)
-library(flexdashboard)
+########################################
+# setwd("C:/Users/bjcfa/Desktop/Shiny/Practice")
 library(shinydashboard)
 library(raster)
 library(htmltools)
@@ -215,97 +212,18 @@ bakersfield <- read.csv("bakersfield_filter.csv")[,-c(1:4)]
 detroit <- read.csv("detroit_filtered.csv")[,-c(1:4)]
 houston <- read.csv("houston_filter.csv")[,-c(1:4)]
 indianapolis <-read.csv("indianapolis_filter.csv")[,-c(1:4)]
-```
 
-### Hello, I am Junchi Bin! A master candidate of electrical engineering in University of British Columbia, Okanagan Campus supervised by Dr. Zheng Liu. 
-
-```{r}
-library(leaflet)
-content1 <- paste(sep = "<br/>",
-  "<b><a href='https://www.linkedin.com/in/junchi-bin-59bb53108?trk=nav_responsive_tab_profile_pic'>Junchi Bin</a></b>",
-    "My Linkin profile is here",
-  "<b><a href='http://engineering.ok.ubc.ca/welcome.html'>About UBCO</a></b>",
-  "<b><a href='https://lukeandshuo.github.io/Lab_WebPage/'>About ISDPRL</a></b>"
-
-)
-
-content2 <- paste(sep = "<br/>",
-  "<b><a href='http://www.arsenal.com/home'>Arsenal FC</a></b>",
-  "Once A Gooner, Always A Gooner!"
-)
-
-content3 <- 
-        paste(sep = "<br/>",
-     "<b><a href='http://www.chinadaily.com.cn/m/guangxi/fangchenggang/'>Fangchenggang City</a></b>",   
-  "I am from China and here is my hometown!"
-)
+# austin <- read.csv("austin_filtered.csv")[,-c(1:3)]
+# bakersfield <- read.csv("bakersfield_filter.csv")[,-c(1:4)]
+# detroit <- read.csv("detroit_filtered.csv")[,-c(1:4)]
+# houston <- read.csv("houston_filter.csv")[,-c(1:4)]
+# indianapolis <-read.csv("indianapolis_filter.csv")[,-c(1:4)]
 
 
 
-content4 <- 
-        paste(sep = "<br/>",
-        "<b><a href='https://nau.edu/'>Northern Arizona University</a></b>",
-  "I lived and studied on Northern Arizona University about 3 years! Go Lumberjacks!"
-)
-
-content5 <- 
-        paste(sep = "<br/>",
-        "<b><a href='http://en.chd.edu.cn/'>Chang'An University</a></b>",
-  "One of the best Chinese universities in my mind."
-)
-leaflet() %>%
-  addTiles() %>%
-         addPopups(-119.3944778, 49.938880, content1, options = popupOptions(closeButton = TRUE))%>%
-            addPopups(-0.111740, 51.553027, content2,
-    options = popupOptions(closeButton = TRUE)) %>%
-                 addPopups(108.353847, 21.686860, content3,
-    options = popupOptions(closeButton = TRUE)) %>%
-         addPopups(-111.652918, 35.185454, content4,
-    options = popupOptions(closeButton = TRUE)) %>%
-         addPopups(108.972909, 34.233326, content5,
-    options = popupOptions(closeButton = TRUE))
-  
-        
-```
-
-
-
-***
-
-
-
-
-```{r, out.width = "290px"}
-knitr::include_graphics("figures/JB.jpg")
-```
-
-Name: Junchi Bin
-
-Major: Electrical Engineering
-
-School: University of British Columbia, Okanagan Campus
-
-Laboratory: Intelligent Sensing, Diagnosis and Prognosis Research Laboratory (ISDPRL)
-
-Position: Graudate Research Assistant
-
-Supervisor: Dr. Zheng Liu
-
-Email: junchibin@alumni.ubc.ca
-
-Address: EME4242 - 1137 Alumni Ave, Kelowna, BC Canada V1V 1V7
-
-Research Interest: Data Mining, Internet of Things
-
-
-### Automated Valuation Model (AVM) is a cooperative project with team Data Nerds in order to analyze real-estate data in North America. The plot below is a scatter plot for some features.
-
-
-
-```{r,out.width = "290px"}
-
+# Define UI for application that draws a histogram
 ui <- shinyUI(dashboardPage(
-        dashboardHeader(title = "AVM Stage One Report",titleWidth = 450),
+        dashboardHeader(title = "Data Nerds"),
         dashboardSidebar(
                 sidebarMenu(
                         selectInput("location_info", "Choose a city for visualization",
@@ -493,59 +411,3 @@ server <- shinyServer(function(input,output){
 # Run the application 
 shinyApp(ui = ui, server = server)
 
-```
-
-***
-
-```{r, out.width = "290px"}
-knitr::include_graphics("figures/JB.jpg")
-```
-
-Name: Junchi Bin
-
-Major: Electrical Engineering
-
-School: University of British Columbia, Okanagan Campus
-
-Laboratory: Intelligent Sensing, Diagnosis and Prognosis Research Laboratory (ISDPRL)
-
-Position: Graudate Research Assistant
-
-Supervisor: Dr. Zheng Liu
-
-Email: junchibin@alumni.ubc.ca
-
-Address: EME4242 - 1137 Alumni Ave, Kelowna, BC Canada V1V 1V7
-
-Research Interest: Data Mining, Internet of Things
-
-
-
-<!-- ### Internet of things (IoT) is another proeject we are working on. Sensors and communication modules are under experiments. The monitoring center will be updated soon. -->
-
-<!-- ```{r, out.width = "290px"} -->
-<!-- knitr::include_graphics("figures/TBC.png") -->
-<!-- ``` -->
-
-<!-- *** -->
-<!-- ```{r, out.width = "290px"} -->
-<!-- knitr::include_graphics("figures/JB.jpg") -->
-<!-- ``` -->
-
-<!-- Name: Junchi Bin -->
-
-<!-- Major: Electrical Engineering -->
-
-<!-- School: University of British Columbia, Okanagan Campus -->
-
-<!-- Laboratory: Intelligent Sensing, Diagnosis and Prognosis Research Laboratory (ISDPRL) -->
-
-<!-- Position: Graudate Research Assistant -->
-
-<!-- Supervisor: Dr. Zheng Liu -->
-
-<!-- Email: junchibin@alumni.ubc.ca -->
-
-<!-- Address: EME4242 - 1137 Alumni Ave, Kelowna, BC Canada V1V 1V7 -->
-
-<!-- Research Interest: Data Mining, Internet of Things -->
