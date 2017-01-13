@@ -6,7 +6,7 @@ output:
     # social: menu
     # source: embed
  # runtime: shiny
-runtime: shiny
+
 ---
 
 ```{r setup, include=FALSE}
