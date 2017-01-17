@@ -4,6 +4,8 @@ output:
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
+    navbar:
+      - { title: "My Resume", href: "www.linkedin.com/in/jb2849", align: left }
 ---
 
 ```{r setup, include=FALSE}
@@ -18,8 +20,6 @@ Column {data-width=700}
 ```{r}
 library(leaflet)
 content1 <- paste(sep = "<br/>",
-  "<b><a href='https://www.linkedin.com/in/junchi-bin-59bb53108?trk=nav_responsive_tab_profile_pic'>Junchi Bin</a></b>",
-    "My Linkin profile is here",
   "<b><a href='http://engineering.ok.ubc.ca/welcome.html'>About UBCO</a></b>",
   "<b><a href='https://lukeandshuo.github.io/Lab_WebPage/'>About ISDPRL</a></b>"
 
