@@ -1,8 +1,13 @@
 ---
-title: "Personal Profile: Junchi Bin"
+title: "Junchi Bin - Personal Website"
 output: 
   flexdashboard::flex_dashboard:
     storyboard: true
+    theme : yeti
+ 
+    # theme : spacelab
+    # theme : readable
+    # theme : cerulean
     # social: menu
     # source: embed
  # runtime: shiny
@@ -96,8 +101,5 @@ Address: EME4242 - 1137 Alumni Ave, Kelowna, BC Canada V1V 1V7
 Research Interest: Data Mining, Internet of Things
 
 Project: <b><a href='https://junchibin.shinyapps.io/AVM_One/'>Automate Valuation Model</a></b>
-
-<!-- ### Automated Valuation Model (AVM) is a cooperative project with team Data Nerds in order to analyze real-estate data in North America. The plot below is a scatter plot for some features. -->
-
 
 
